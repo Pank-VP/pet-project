@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Footer.module.scss';
-import Logo from '../../images/Header/logo.png';
+import Logo from '../../images/Footer/bitcoin.svg';
 
 const Footer: FC = () => {
   const navigate = useNavigate();

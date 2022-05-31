@@ -7,7 +7,7 @@ export interface IDataState {
 };
 
 const initialState: IDataState | undefined = {
-  items: undefined
+  items: undefined,
 };
 
 export const addDataReducers = createReducer(initialState, (builder) => {

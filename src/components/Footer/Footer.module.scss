@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background: linear-gradient(to right, #18162c, #16488b);
+
+
+  .wrapper {
+    width: 80px;
+    margin: 0 auto;
+
+    .logo {
+      height: 80px;
+    }
+  }
+
+  .navigate {
+    margin: 0 auto;
+  }
+}

@@ -1,4 +1,8 @@
 .container {
+  height: 67vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &_wrapper {
     max-width: 1160px;
@@ -8,8 +12,14 @@
   .table {
     margin: 0 auto;
 
-    th {
+    &_title {
       padding: 20px 60px;
+      font-size: 20px;
+    }
+
+    &_name {
+      padding: 10px 0 0 15px;
+      
     }
 
     td {
@@ -18,7 +28,8 @@
       }
 
       &:first-child {
-        padding: 0 65px 0 15px;
+        width: 215px;
+        padding-left: 15px;
       }
     }
   }

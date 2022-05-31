@@ -21,12 +21,20 @@ const Header: FC = () => {
           <div className={styles.navigate}>
             <img className={styles.logo} src={Logo} onClick={handleOnHome} alt="Crypto coins"/>
             <nav>
-              <ul className={styles.navi}>
-                <li className={styles.link}>{`${items![0].symbol} - ${Math.floor(items![0].priceUsd * 100) / 100} $`}</li>
-                <li className={styles.link}>{`${items![1].symbol} - ${Math.floor(items![1].priceUsd * 100) / 100} $`}</li>
-                <li className={styles.link}>{`${items![2].symbol} - ${Math.floor(items![2].priceUsd * 100) / 100} $`}</li>
-                
-              </ul>
+              {!items && (
+                <ul className={styles.navigation_list}>
+                  <li className={styles.link}>{`BTC - 0 $`}</li>
+                  <li className={styles.link}>{`ETH - 0 $`}</li>
+                  <li className={styles.link}>{`USDT - 0 $`}</li>
+                </ul>
+              )}
+              {items && (
+                <ul className={styles.navi}>
+                  <li className={styles.link}>{`${items[0].symbol} - ${Math.floor(items![0].priceUsd * 100) / 100} $`}</li>
+                  <li className={styles.link}>{`${items[1].symbol} - ${Math.floor(items![1].priceUsd * 100) / 100} $`}</li>
+                  <li className={styles.link}>{`${items[2].symbol} - ${Math.floor(items![2].priceUsd * 100) / 100} $`}</li>
+                </ul>
+              )}
             </nav>
             <div className={styles.briefcase}>
               <img src={briefcase} className={styles.icon} alt="briefcase" />
