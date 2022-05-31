@@ -1,0 +1,25 @@
+.container {
+
+  &_wrapper {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .table {
+    margin: 0 auto;
+
+    th {
+      padding: 20px 60px;
+    }
+
+    td {
+      &:not(:first-child) {
+        text-align: center;
+      }
+
+      &:first-child {
+        padding: 0 65px 0 15px;
+      }
+    }
+  }
+}
