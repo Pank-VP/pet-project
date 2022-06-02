@@ -9,7 +9,7 @@ const App: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/coin" element={<Coin />} />
+      <Route path="/coin/:id" element={<Coin />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

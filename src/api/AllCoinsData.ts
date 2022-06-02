@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export interface ICoinsData {
-  id: string;
+  id: string | undefined;
   rank: number;
   symbol: string;
   name: string;
@@ -15,10 +15,10 @@ export interface ICoinsData {
   explorer: string;
 }
 
-const CoinsData = async (): Promise<ICoinsData[]> => {
+const AllCoinsData = async (): Promise<ICoinsData[]> => {
   const response = await axios.get('https://api.coincap.io/v2/assets');
   
   return response.data.data;
 };
 
-export default CoinsData;
+export default AllCoinsData;

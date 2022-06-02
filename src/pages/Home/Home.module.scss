@@ -3,6 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  height: 100%;
+  min-height: 80vh;
 
   &_wrapper {
     max-width: 1160px;
@@ -11,10 +14,29 @@
 
   .table {
     margin: 0 auto;
+    background-color: #eaeaea;
+    border-radius: 15px;
 
     &_title {
-      padding: 20px 60px;
+      &:not(:last-child) {
+        padding: 20px 40px;
+      }
+
+      &:last-child {
+        padding: 0 40px 0 20px;
+      }
+      
       font-size: 20px;
+    }
+
+    &_add {
+      &_coin {
+        border-radius: 50%;
+        background-color: #578fe9;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+      }
     }
 
     &_name {
@@ -23,14 +45,24 @@
     }
 
     td {
+      border-bottom: 1px solid rgb(255, 255, 255);
+
       &:not(:first-child) {
         text-align: center;
       }
-
+      
       &:first-child {
         width: 215px;
         padding-left: 15px;
       }
+    }
+
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: green;
     }
   }
 }

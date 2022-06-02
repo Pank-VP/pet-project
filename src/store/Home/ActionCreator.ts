@@ -1,7 +1,15 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import CoinsData from '../../api/CoinsData';
+import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
+import AllCoinsData from '../../api/AllCoinsData';
 import DataActionType from './ActionType';
 
 export const getCoinsData = createAsyncThunk(DataActionType.Get,() => {
-  return CoinsData();
+  return AllCoinsData();
+});
+
+export const setCurrentPage = createAction(DataActionType.SetCurrentPage, (page: number) => {
+  return {
+    payload: {
+      page
+    }
+  }
 });

@@ -20,6 +20,7 @@
       margin-right: 10px;
     }
 
+    
     .page_link {
       display: flex;
       align-items: center;
@@ -29,6 +30,11 @@
       cursor: pointer;
       border: 1px solid black;
       border-radius: 5px;
+
+      &_currentPage {
+        background-color: grey;
+        color: white;
+      }
     }
   }
 }

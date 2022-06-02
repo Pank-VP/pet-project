@@ -1,17 +1,23 @@
+import clsx from 'clsx';
 import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentPage } from '../../store/Home/ActionCreator';
+import { RootState } from '../../store/store';
 import styles from './Pagination.module.scss';
 
-interface IPagination {
-  coinsPerPage: number;
-  totalCoins: number;
-  paginate: any;
+// interface IPagination {
+//   coinsPerPage: number;
+//   totalCoins: number;
+//   paginate: any;
 
-}
+// }
 
-const Pagination: FC<IPagination> = ({ coinsPerPage, totalCoins, paginate }) => {
-  const pageNumber = [];
+const Pagination: FC = () => {
+  const dispatch = useDispatch();
+  const { coinsPerPage, totalCount, currentPage } = useSelector((state: RootState) => state.addDataReducers);
+  const pageNumber: number[] = [];
 
-  for (let i = 1; i <= Math.ceil(totalCoins/coinsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalCount/coinsPerPage); i++) {
     pageNumber.push(i)
   }
 
@@ -19,10 +25,13 @@ const Pagination: FC<IPagination> = ({ coinsPerPage, totalCoins, paginate }) => 
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <ul className={styles.numeration}>
-          {pageNumber.map(number => (
-            <li className={styles.page_item} key={number}>
-              <div className={styles.page_link} onClick={() => paginate(number)}>
-                {number}
+          {coinsPerPage && pageNumber.map((page, number) => (
+            <li key={number} className={styles.page_item}>
+              <div
+                className={clsx(styles.page_link, currentPage === page && styles.page_link_currentPage)}
+                onClick={() => dispatch(setCurrentPage(page))}
+              >
+                {number + 1}
               </div>
             </li>
           ))}
