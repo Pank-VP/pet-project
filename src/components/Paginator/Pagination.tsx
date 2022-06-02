@@ -14,7 +14,7 @@ import styles from './Pagination.module.scss';
 
 const Pagination: FC = () => {
   const dispatch = useDispatch();
-  const { coinsPerPage, totalCount, currentPage } = useSelector((state: RootState) => state.addDataReducers);
+  const { coinsPerPage, totalCount, currentPage } = useSelector((state: RootState) => state.addAllCoins);
   const pageNumber: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalCount/coinsPerPage); i++) {

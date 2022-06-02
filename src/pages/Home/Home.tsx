@@ -11,11 +11,11 @@ import styles from './Home.module.scss';
 const Home: FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { items, currentPage, coinsPerPage } = useSelector((state: RootState) => state.addDataReducers);
+  const { items, currentPage, coinsPerPage } = useSelector((state: RootState) => state.addAllCoins);
 
   useEffect(() => {
     dispatch(getCoinsData())
-  }, [navigate]);
+  }, [dispatch]);
 
   const lastCoinsIndex = currentPage * coinsPerPage;
   const firstCoinsIndex = lastCoinsIndex - coinsPerPage;

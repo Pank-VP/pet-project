@@ -1,5 +1,5 @@
 enum DataActionType {
-  Get = 'Get',
+  GetCoins = 'GetCoins',
   SetCurrentPage = 'SetCurrentPage'
 }
 

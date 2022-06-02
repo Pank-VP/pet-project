@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { addDataCoin } from './Coin/Reducers';
-import { addDataReducers } from './Home/Reducers';
+import { addCoinInterval } from './Coin/Reducers';
+import { addAllCoins } from './Home/Reducers';
 
 const store = configureStore({
   reducer: {
-    addDataReducers: addDataReducers,
-    addDataCoin: addDataCoin,
+    addAllCoins: addAllCoins,
+    addCoinInterval: addCoinInterval,
   }
 });
 

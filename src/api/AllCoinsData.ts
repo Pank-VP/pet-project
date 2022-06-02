@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export interface ICoinsData {
-  id: string | undefined;
+  id: string;
   rank: number;
   symbol: string;
   name: string;

@@ -1,0 +1,48 @@
+
+.container {
+  width: 0;
+  height: 0;
+  background-color: rgb(128 128 128 / 87%);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  
+
+  // &_active {
+  //   opacity: 10;
+  //   pointer-events: all;
+  // }
+
+  &_active{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &_content {
+    position: relative;
+    padding: 40px;
+    border-radius: 60px;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 0px 0px 30px 5px #0d889c inset;
+    width: 95vw;
+    height: 80vh;
+    transform: scale(0.5);
+  }
+
+  &_close {
+    position: absolute;
+    top: -9%;
+    right: -7%;
+    border: 2px solid rgb(177, 10, 10);
+    color: rgb(248, 188, 188);
+    background-color: inherit;
+    text-transform: uppercase;
+    border-radius: 50%;
+    padding: 30px 40px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+}

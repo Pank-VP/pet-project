@@ -2,21 +2,21 @@ import { createReducer } from '@reduxjs/toolkit';
 import { ICoinsData } from '../../api/AllCoinsData';
 import { getCoinsData, setCurrentPage } from './ActionCreator';
 
-export interface IDataState {
+export interface IDataCoins {
   items?: ICoinsData[];
   currentPage: number;
   coinsPerPage: number;
   totalCount: number;
 };
 
-const initialState: IDataState | undefined = {
+const initialState: IDataCoins | undefined = {
   items: undefined,
   currentPage: 1,
   coinsPerPage: 15,
   totalCount: 0,
 };
 
-export const addDataReducers = createReducer(initialState, (builder) => {
+export const addAllCoins = createReducer(initialState, (builder) => {
   builder.addCase(getCoinsData.fulfilled, (state, action) => {
     state.items = action.payload
     state.coinsPerPage = 15

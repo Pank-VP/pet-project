@@ -2,7 +2,7 @@ import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import AllCoinsData from '../../api/AllCoinsData';
 import DataActionType from './ActionType';
 
-export const getCoinsData = createAsyncThunk(DataActionType.Get,() => {
+export const getCoinsData = createAsyncThunk(DataActionType.GetCoins,() => {
   return AllCoinsData();
 });
 
