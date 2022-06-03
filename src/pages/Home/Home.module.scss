@@ -31,11 +31,13 @@
 
     &_add {
       &_coin {
+        position: relative;
         border-radius: 50%;
         background-color: #578fe9;
         color: white;
         border: 1px solid white;
         cursor: pointer;
+        width: 19px;
       }
     }
 

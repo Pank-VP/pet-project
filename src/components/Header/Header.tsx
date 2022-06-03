@@ -6,7 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import briefcase from '../../images/Header/briefcase.svg';
 import { getCoinsData } from '../../store/Home/ActionCreator';
-import BriefcaseModal from '../BriefcaseModal/BriefcaseModal';
+import CaseCoins from '../BriefcaseModal/BriefcaseCoins/BriefcaseCoin';
+import clsx from 'clsx';
+import { round } from 'lodash';
+import { caseCounter, caseDifference } from '../Utilits/BriefcaseCounter';
+import { casePercent } from '../Utilits/caseCounter';
 
 
 const Header: FC = () => {
@@ -59,30 +63,29 @@ const Header: FC = () => {
                   })}
               </ul>
             </nav>
-            <div className={styles.modal}>
-              <BriefcaseModal active={activeModalPage} setActive={setActiveModalPage}>
-                <div className={styles.briefcase}>
-                  <div className={styles.briefcase_title}>
-                    <p className={styles.briefcase_price}>Coins list</p>
+            <div className={styles.modal} onClick={handleOnChange}>
+              <CaseCoins activeModalPage={activeModalPage} setActiveModalPage={setActiveModalPage} />
+              <div className={styles.modal_cont}>
+                <img src={briefcase} className={styles.icon} alt="briefcase" />
+                <div className={styles.case_subtitle}>
+                  <span className={styles.case_header}>My Briefcase</span>
+                  <div className={styles.case_rigft}>
+                    <span className={styles.case_item}>{caseCounter()} USD</span>
+                    <span
+                      className={clsx(styles.case_item, Math.sign(casePercent()) === -1 || -0 ? styles.red : styles.green)}
+                    >
+                      &nbsp;
+                      {Math.sign(casePercent()) !== -1 || -0 ? '+' : ''}
+                      {round(casePercent(), 4)}
+                      &nbsp;
+                    </span>
+                    <span
+                      className={clsx(styles.case_item, Math.sign(casePercent()) === -1 || -0 ? styles.red : styles.green)}
+                    >
+                      ({caseDifference(items)} %)
+                    </span>
                   </div>
-                  <div className={styles.coins}>
-                    <div className={styles.coins_heading}>Coins</div>
-                    <div className={styles.coins_heading}>Quantity</div>
-                    <div className={styles.coins_heading}>Price</div>
-                    <div className={styles.coins_heading}>Amount</div>
-                  </div>
-                  <div className={styles.coins}>
-                    <div className={styles.coins_items}>Bitcoin</div>
-                    <div className={styles.coins_items}>3.4</div>
-                    <div className={styles.coins_items}>29756.99</div>
-                    <div className={styles.coins_items}>{3.4 * 29756.99}</div>
-                    <div className={styles.coins_delete}>-</div>
-                  </div>
-                  
                 </div>
-              </BriefcaseModal>
-              <div>
-                <img src={briefcase} className={styles.icon} alt="briefcase" onClick={handleOnChange} />
               </div>
             </div>
           </div>

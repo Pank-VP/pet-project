@@ -1,0 +1,63 @@
+.case {
+
+  &_title {
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 50px;
+  }
+
+  &_card {
+    margin-top: 50px;
+    border-bottom: 3px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 60px;
+    pointer-events: painted;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bold;
+    border: 1px solid #0d889c;
+    color: white;
+    font-size: 30px;
+
+    &:hover {
+      background-color: #0d889c;
+      color: black;
+    }
+  }
+
+  &_items {
+    color: white;
+    font-size: 36px;
+  }
+
+  input{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: inherit;
+    color: white;
+    font-size: 30px;
+  }
+}
+
+.red {
+  color: red;
+  font-size: 36px;
+  margin-left: 25px;
+}
+
+.green {
+  color: green;
+  font-size: 36px;
+  margin-left: 25px;
+}
