@@ -5,13 +5,6 @@ import { setCurrentPage } from '../../store/Home/ActionCreator';
 import { RootState } from '../../store/store';
 import styles from './Pagination.module.scss';
 
-// interface IPagination {
-//   coinsPerPage: number;
-//   totalCoins: number;
-//   paginate: any;
-
-// }
-
 const Pagination: FC = () => {
   const dispatch = useDispatch();
   const { coinsPerPage, totalCount, currentPage } = useSelector((state: RootState) => state.addAllCoins);

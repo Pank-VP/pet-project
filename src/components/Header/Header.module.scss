@@ -9,6 +9,18 @@
   &_wrapper {
     width: 1160px;
     margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      width: 800px;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 0 15px;
+    }
+  }
+
+  .header {
+    height: 100%;
   }
 
   .link {
@@ -18,16 +30,34 @@
     &:not(:last-child) {
       margin-right: 30px;
     }
+
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
   }
   
   .logo {
     width: 270px;
     height: 96px;
+
+    @media (max-width: 650px) {
+      width: 135px;
+      height: 48px;
+    }
+
+    @media (max-width: 450px) {
+      width: 80px;
+      height: 35px;
+    }
   }
 
   .navi {
     display: flex;
     padding: 0;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
   }
 
   .modal {
@@ -39,6 +69,10 @@
     .icon {
       width: 35px;
       margin-right: 15px;
+
+      @media (max-width: 500px) {
+        width: 25px;
+      }
     }
 
   }
@@ -51,14 +85,30 @@
 .case_subtitle {
   color: white;
 
-  .case_item {
-    &:not(:first-child){
-      margin-left: 10px;
+  .case_header{
+    font-size: 25px;
+
+    @media (max-width: 700px) {
+      font-size: 15px;
     }
   }
 
-  .case_header{
-    font-size: 25px;
+  .case_right {
+    display: flex;
+    
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+  }
+
+  .case_item {
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -74,6 +124,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 
   .briefcase {
     height: 100%;
@@ -124,8 +175,6 @@
         height: 50px;
         cursor: pointer;
       }
-
     }
-
   }
 }

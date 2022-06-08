@@ -12,14 +12,14 @@ export interface IDataCoins {
 const initialState: IDataCoins | undefined = {
   items: undefined,
   currentPage: 1,
-  coinsPerPage: 15,
+  coinsPerPage: 10,
   totalCount: 0,
 };
 
 export const addAllCoins = createReducer(initialState, (builder) => {
   builder.addCase(getCoinsData.fulfilled, (state, action) => {
     state.items = action.payload
-    state.coinsPerPage = 15
+    state.coinsPerPage = 10
     state.totalCount = action.payload.length
   });
 

@@ -52,16 +52,15 @@ const Home: FC = () => {
               return (
                 <tbody>
                   <tr className={styles.table_row} key={item.id} onClick={() => handleOnClick(item.id)}>
-                    <td className={styles.table_name}>{item.name}</td>
-                    <td className={clsx(Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
+                    <td className={styles.table_items}>{item.name}</td>
+                    <td className={clsx(styles.table_items, Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
                       {Math.floor(item.priceUsd * 100) / 100} $
                     </td>
-                    <td className={clsx(Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
+                    <td className={clsx(styles.table_items, Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
                       {Math.floor(item.changePercent24Hr * 100) / 100} %
                     </td>
-                    <td>{Math.floor(item.marketCapUsd / 1000000) / 1000} B</td>
-                    <td className={styles.table_add} onClick={(event) => event.stopPropagation()}>
-                      {/* <button className={styles.table_add_coin}>+</button> */}
+                    <td className={styles.table_items}>{Math.floor(item.marketCapUsd / 1000000) / 1000} B</td>
+                    <td className={styles.table_items} onClick={(event) => event.stopPropagation()}>
                       <Tooltip content='Add in case'>
                         <div className={styles.table_add_coin} data-id={item.id} onClick={(event) => handleFormAdd(event)}>+</div>
                       </Tooltip>

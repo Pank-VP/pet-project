@@ -1,11 +1,10 @@
 .container {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .container .container_text {
-  visibility: hidden;
+  display: none;
   width: 120px;
   background-color: #555;
   color: #fff;
@@ -34,6 +33,6 @@
 }
 
 .container:hover .container_text {
-  visibility: visible;
+  display: block;
   opacity: 1;
 }

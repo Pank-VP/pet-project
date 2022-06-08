@@ -25,12 +25,13 @@ const BrifecaseCoins: FC<ICaseCoinsProps> = ({activeModalPage, setActiveModalPag
       <div className={styles.case}>
         <h1 className={styles.case_title}>Coins in your case</h1>
         <div className={styles.case_header}>
-          <ul>
-            <li>Coin</li>
-            <li>Price</li>
-            <li>Change Percent(24H)</li>
-            <li>Amount Coins(24H)</li>
-            <li>Total</li>
+          <ul className={styles.case_header_title}>
+            <li className={styles.case_header_items}>Coin</li>
+            <li className={styles.case_header_items}>Price</li>
+            <li className={clsx(styles.case_header_items, styles.hidden)}>Change Percent(24H)</li>
+            <li className={styles.case_header_items}>Amount Coins(24H)</li>
+            <li className={styles.case_header_items}>Total</li>
+            <li className={styles.case_header_items}></li>
           </ul>
         </div>
         <div className={styles.case_container}>
@@ -41,20 +42,23 @@ const BrifecaseCoins: FC<ICaseCoinsProps> = ({activeModalPage, setActiveModalPag
                 {round(item.price, 3)}$
               </p>
               <span
-                className={clsx(Math.sign(item.percent) === -1 || -0 ? styles.red : styles.green)}
+                className={clsx(styles.case_items, Math.sign(item.percent) === -1 || -0 ? styles.red : styles.green, styles.hidden)}
               >
                 {Math.sign(item.percent) !== -1 || -0 ? '+' : ''}
                 {round(item.percent, 4)}%
               </span>
               <span className={styles.case_items}>{item.amount}</span>
               <span className={styles.case_items}>{round(item.total, 1)}$</span>
-              <div
-                className={styles.case_button}
-                onClick={(event) => removeCoinFromLS(event)}
-                data-id={item.id}
-              >
-                Delete
+              <div className={styles.case_items}>
+                <div
+                  className={styles.case_button}
+                  onClick={(event) => removeCoinFromLS(event)}
+                  data-id={item.id}
+                >
+                  Delete
+                </div>
               </div>
+              
             </div>
           )
           )}

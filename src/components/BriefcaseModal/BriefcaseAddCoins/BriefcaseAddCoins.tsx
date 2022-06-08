@@ -45,7 +45,7 @@ const AddCoin: FC<IAddCoinProps> = ({activeModal, setActiveModal, coins, coinId}
           if(item.id === coinId){
             return (
               <form className={styles.case_card} key={index}>
-                <h3 className={styles.case_items}>{item.name}</h3>
+                <p className={styles.case_items}>{item.name}</p>
                 <p className={styles.case_items}>
                   {round(item.priceUsd, 3)}$
                   <span
@@ -56,6 +56,7 @@ const AddCoin: FC<IAddCoinProps> = ({activeModal, setActiveModal, coins, coinId}
                   </span>
                 </p>
                 <input
+                 className={styles.case_input}
                  type="number"
                  onChange={(event) => setAmount(Number(event.target.value))}
                  required

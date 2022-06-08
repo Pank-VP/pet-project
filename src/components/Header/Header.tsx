@@ -69,7 +69,7 @@ const Header: FC = () => {
                 <img src={briefcase} className={styles.icon} alt="briefcase" />
                 <div className={styles.case_subtitle}>
                   <span className={styles.case_header}>My Briefcase</span>
-                  <div className={styles.case_rigft}>
+                  <div className={styles.case_right}>
                     <span className={styles.case_item}>{caseCounter()} USD</span>
                     <span
                       className={clsx(styles.case_item, Math.sign(casePercent()) === -1 || -0 ? styles.red : styles.green)}

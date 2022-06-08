@@ -13,6 +13,10 @@
 
     .logo {
       height: 80px;
+
+      @media (max-width: 650px) {
+        height: 50px;
+      }
     }
   }
 
