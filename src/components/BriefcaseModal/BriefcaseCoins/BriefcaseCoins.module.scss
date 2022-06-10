@@ -11,16 +11,8 @@
       font-size: 22px;
       font-weight: bold;
 
-      // @media (max-width: 900px) {
-      //   margin: 0;
-      //   padding: 0;
-      //   // padding-left: 10px;
-        
-      // }
-
       @media (max-width: 450px) {
         width: 400px;
-        
       }
     }
 
@@ -36,11 +28,7 @@
       }
 
       @media (max-width: 700px) {
-        // font-size: 20px;
         font-size: 12px;
-        // &:not(:last-child) {
-        //   margin-right: 25px;
-        // }
       }
     }
   }
@@ -65,11 +53,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: space-between;
-
-    // @media (max-width: 900px) {
-    //   justify-content: start;
-    // }
   }
 
   &_items {
@@ -78,11 +61,6 @@
     color: white;
     font-size: 25px;
     width: 285px;
-
-    // &:first-child {
-    //   margin-left: 50px;
-    // }
-    
 
     @media (max-width: 1000px) {
       font-size: 20px;
@@ -123,12 +101,6 @@
       height: 40px;
       font-size: 15px;
     }
-  }
-
-  input{
-    padding: 10px;
-    border-radius: 5px;
-    background-color: inherit;
   }
 }
 

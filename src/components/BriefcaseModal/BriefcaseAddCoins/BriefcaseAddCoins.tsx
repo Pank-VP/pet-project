@@ -33,8 +33,6 @@ const AddCoin: FC<IAddCoinProps> = ({activeModal, setActiveModal, coins, coinId}
         }
       )
     }
-
-
   }
 
   return (

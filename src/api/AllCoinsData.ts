@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from './api';
 
 export interface ICoinsData {
   id: string;
@@ -16,7 +16,7 @@ export interface ICoinsData {
 }
 
 const AllCoinsData = async (): Promise<ICoinsData[]> => {
-  const response = await axios.get('https://api.coincap.io/v2/assets');
+  const response = await axios.get('assets/');
   
   return response.data.data;
 };
