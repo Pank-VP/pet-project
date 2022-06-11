@@ -5,10 +5,12 @@ import PageLayout from '../../components/PageLayout/PageLayout';
 import Pagination from '../../components/Paginator/Pagination';
 import { getCoinsData } from '../../store/Home/ActionCreator';
 import type { AppDispatch, RootState } from '../../store/store';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.scss';
 import Tooltip from '../../components/Tooltip/Tooltip';
 import AddCoin from '../../components/BriefcaseModal/BriefcaseAddCoins/BriefcaseAddCoins';
+import { textPercent } from '../../components/Utilits/textPercent';
+import { mathFloor } from '../../components/Utilits/MathFloor';
 
 const Home: FC = () => {
   const navigate = useNavigate();
@@ -53,11 +55,11 @@ const Home: FC = () => {
                 <tbody>
                   <tr className={styles.table_row} key={item.id} onClick={() => handleOnClick(item.id)}>
                     <td className={styles.table_items}>{item.name}</td>
-                    <td className={clsx(styles.table_items, Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
-                      {Math.floor(item.priceUsd * 100) / 100} $
+                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr))}>
+                      {mathFloor(item.priceUsd)} $
                     </td>
-                    <td className={clsx(styles.table_items, Math.sign(item.changePercent24Hr) === -1 || -0 ? styles.red : styles.green)}>
-                      {Math.floor(item.changePercent24Hr * 100) / 100} %
+                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr))}>
+                      {mathFloor(item.changePercent24Hr)} %
                     </td>
                     <td className={styles.table_items}>{Math.floor(item.marketCapUsd / 1000000) / 1000} B</td>
                     <td className={styles.table_items} onClick={(event) => event.stopPropagation()}>

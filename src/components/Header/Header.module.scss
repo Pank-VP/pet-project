@@ -106,18 +106,14 @@
       margin-right: 10px;
     }
 
+    @media (max-width: 650px) {
+      font-size: 13px;
+    }
+
     @media (max-width: 500px) {
       font-size: 10px;
     }
   }
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
 }
 
 .navigate {

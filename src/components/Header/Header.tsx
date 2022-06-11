@@ -11,6 +11,9 @@ import clsx from 'clsx';
 import { round } from 'lodash';
 import { caseCounter, caseDifference } from '../Utilits/BriefcaseCounter';
 import { casePercent } from '../Utilits/caseCounter';
+import { mathFloor } from '../Utilits/MathFloor';
+import { signMath } from '../Utilits/Math';
+import { textPercent } from '../Utilits/textPercent';
 
 
 const Header: FC = () => {
@@ -57,7 +60,7 @@ const Header: FC = () => {
                         className={styles.link}
                         onClick={() => handleOnClick(item.id)}
                       >
-                          {`${item.symbol} - ${Math.floor(item.priceUsd * 100) / 100} $`}
+                          {`${item.symbol} - ${mathFloor(item.priceUsd)} $`}
                       </li>
                     )
                   })}
@@ -72,15 +75,15 @@ const Header: FC = () => {
                   <div className={styles.case_right}>
                     <span className={styles.case_item}>{caseCounter()} USD</span>
                     <span
-                      className={clsx(styles.case_item, Math.sign(casePercent()) === -1 || -0 ? styles.red : styles.green)}
+                      className={clsx(styles.case_item, textPercent(casePercent()))}
                     >
                       &nbsp;
-                      {Math.sign(casePercent()) !== -1 || -0 ? '+' : ''}
+                      {signMath(casePercent())}
                       {round(casePercent(), 4)}
                       &nbsp;
                     </span>
                     <span
-                      className={clsx(styles.case_item, Math.sign(casePercent()) === -1 || -0 ? styles.red : styles.green)}
+                      className={clsx(styles.case_item, textPercent(casePercent()))}
                     >
                       ({caseDifference(items)} %)
                     </span>

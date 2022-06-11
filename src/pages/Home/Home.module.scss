@@ -72,7 +72,10 @@
 
     &_items {
       border-bottom: 1px solid rgb(255, 255, 255);
-      padding: 10px 0 0 15px;
+      
+      &:not(:last-child) {
+        padding: 10px 0 0 15px;
+      }
 
       &:not(:first-child) {
         text-align: center;

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import Chart from '../../components/Chart/Chart';
 import PageLayout from '../../components/PageLayout/PageLayout';
+import { mathFloor } from '../../components/Utilits/MathFloor';
 import { getCoinInterval } from '../../store/Coin/ActionCreator';
 import { getCoinsData } from '../../store/Home/ActionCreator';
 import { AppDispatch, RootState } from '../../store/store';
@@ -35,12 +36,12 @@ const Coin: FC = () => {
                 return (
                   <div className={styles.heading} key={index}>
                     <div className={styles.title}>
-                      <div className={styles.title_header}>Price</div>
-                      <div className={styles.title_price}>{Math.floor(item.priceUsd * 100) / 100} $</div>
+                      <div className={styles.title_header}>Price {item.symbol}</div>
+                      <div className={styles.title_price}>{mathFloor(item.priceUsd)} $</div>
                     </div>
                     <div className={styles.title}>
                       <div className={styles.title_header}>24h changes</div>
-                      <div className={styles.title_price}>{Math.floor(item.changePercent24Hr * 100) / 100} %</div>
+                      <div className={styles.title_price}>{mathFloor(item.changePercent24Hr)} %</div>
                     </div>
                     <div className={styles.title}>
                       <div className={styles.title_header}>Marcet Cap</div>
