@@ -1,107 +1,104 @@
-.case {
+.case_header {
+  width: 100%;
+  border-bottom: 3px solid #0d889c;
+}
 
-  &_header {
-    width: 100%;
-    border-bottom: 3px solid #0d889c;
+.case_header_title {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
 
-    &_title {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      font-size: 22px;
-      font-weight: bold;
+  @media (max-width: 450px) {
+    width: 400px;
+  }
+}
 
-      @media (max-width: 450px) {
-        width: 400px;
-      }
-    }
+.case_header_items {
+  width: 285px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  list-style-type: none;
 
-    &_items {
-      width: 285px;
-      text-align: center;
-      color: white;
-      font-size: 25px;
-      list-style-type: none;
-
-      @media (max-width: 1000px) {
-        font-size: 20px;
-      }
-
-      @media (max-width: 700px) {
-        font-size: 12px;
-      }
-    }
+  @media (max-width: 1000px) {
+    font-size: 20px;
   }
 
-  &_container {
-    height: 46vh;
-    overflow: auto;
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
+}
+
+.case_container {
+  height: 46vh;
+  overflow: auto;
+}
+
+.case_title {
+  text-align: center;
+  border-bottom: 4px solid white;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 40px;
+}
+
+.case_card {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-bottom: 3px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.case_items {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+  width: 285px;
+
+  @media (max-width: 1000px) {
+    font-size: 20px;
   }
 
-  &_title {
-    text-align: center;
-    border-bottom: 4px solid white;
-    padding-bottom: 20px;
-    color: white;
-    font-size: 40px;
+  @media (max-width: 700px) {
+    font-size: 15px;
   }
+}
 
-  &_card {
-    padding-top: 36px;
-    padding-bottom: 36px;
-    border-bottom: 3px solid white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.case_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 60px;
+  pointer-events: painted;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  border: 1px solid #0d889c;
+  color: white;
+  font-size: 30px;
+
+  @media (max-width: 900px) {
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
   }
-
-  &_items {
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-size: 25px;
-    width: 285px;
-
-    @media (max-width: 1000px) {
-      font-size: 20px;
-    }
-
-    @media (max-width: 700px) {
-      font-size: 15px;
-    }
+  
+  @media (max-width: 450px) {
+    width: 60px;
+    height: 40px;
+    font-size: 15px;
   }
+}
 
-  &_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-    height: 60px;
-    pointer-events: painted;
-    cursor: pointer;
-    border-radius: 15px;
-    font-weight: bold;
-    border: 1px solid #0d889c;
-    color: white;
-    font-size: 30px;
-
-    &:hover {
-      background-color: #0d889c;
-      color: black;
-    }
-
-    @media (max-width: 900px) {
-      width: 80px;
-      height: 50px;
-      font-size: 20px;
-    }
-
-    @media (max-width: 450px) {
-      width: 60px;
-      height: 40px;
-      font-size: 15px;
-    }
-  }
+.case_button:hover {
+  background-color: #0d889c;
+  color: black;
 }
 
 .red {

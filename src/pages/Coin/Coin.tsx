@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import Chart from '../../components/Chart/Chart';
 import PageLayout from '../../components/PageLayout/PageLayout';
-import { mathFloor } from '../../components/Utilits/MathFloor';
+import { mathFloor, mathFloorBillions } from '../../components/Utilits/MathFloor';
 import { getCoinInterval } from '../../store/Coin/ActionCreator';
 import { getCoinsData } from '../../store/Home/ActionCreator';
 import { AppDispatch, RootState } from '../../store/store';
@@ -45,7 +45,7 @@ const Coin: FC = () => {
                     </div>
                     <div className={styles.title}>
                       <div className={styles.title_header}>Marcet Cap</div>
-                      <div className={styles.title_price}>{Math.floor(item.marketCapUsd / 1000000) / 1000} B</div>
+                      <div className={styles.title_price}>{mathFloorBillions(item.marketCapUsd)} B</div>
                     </div>
                   </div>
                 )

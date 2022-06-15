@@ -10,10 +10,10 @@ import CaseCoins from '../BriefcaseModal/BriefcaseCoins/BriefcaseCoin';
 import clsx from 'clsx';
 import { round } from 'lodash';
 import { caseCounter, caseDifference } from '../Utilits/BriefcaseCounter';
-import { casePercent } from '../Utilits/caseCounter';
 import { mathFloor } from '../Utilits/MathFloor';
-import { signMath } from '../Utilits/Math';
-import { textPercent } from '../Utilits/textPercent';
+import { mathSign } from '../Utilits/MathSign';
+import { casePercent } from '../Utilits/CaseCounter';
+import { textPercent } from '../Utilits/TextPercent';
 
 
 const Header: FC = () => {
@@ -47,7 +47,7 @@ const Header: FC = () => {
             <nav>
               {!items && (
                 <ul className={styles.navi}>
-                  <li className={styles.link}>{`BTC - 0 $`}</li>
+                  <li className={(styles.link)}>{`BTC - 0 $`}</li>
                   <li className={styles.link}>{`ETH - 0 $`}</li>
                   <li className={styles.link}>{`USDT - 0 $`}</li>
                 </ul>
@@ -73,12 +73,12 @@ const Header: FC = () => {
                 <div className={styles.case_subtitle}>
                   <span className={styles.case_header}>My Briefcase</span>
                   <div className={styles.case_right}>
-                    <span className={styles.case_item}>{caseCounter()} USD</span>
+                    <span className={clsx(styles.case_item, styles.indent)}>{caseCounter()} USD</span>
                     <span
-                      className={clsx(styles.case_item, textPercent(casePercent()))}
+                      className={clsx(styles.case_item, textPercent(casePercent()), styles.indent)}
                     >
                       &nbsp;
-                      {signMath(casePercent())}
+                      {mathSign(casePercent())}
                       {round(casePercent(), 4)}
                       &nbsp;
                     </span>

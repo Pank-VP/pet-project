@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.scss';
 import Tooltip from '../../components/Tooltip/Tooltip';
 import AddCoin from '../../components/BriefcaseModal/BriefcaseAddCoins/BriefcaseAddCoins';
-import { textPercent } from '../../components/Utilits/textPercent';
-import { mathFloor } from '../../components/Utilits/MathFloor';
+import { textPercent } from '../../components/Utilits/TextPercent';
+import { mathFloor, mathFloorBillions } from '../../components/Utilits/MathFloor';
 
 const Home: FC = () => {
   const navigate = useNavigate();
@@ -43,25 +43,25 @@ const Home: FC = () => {
           <table className={styles.table}>
             <tbody>
               <tr>
-                <th className={styles.table_title}>Coins</th>
-                <th className={styles.table_title}>Price $</th>
-                <th className={styles.table_title}>24h changes  %</th>
-                <th className={styles.table_title}>Marcet Cap</th>
-                <th className={styles.table_title}></th>
+                <th className={clsx(styles.table_title, styles.indent)}>Coins</th>
+                <th className={clsx(styles.table_title, styles.indent)}>Price $</th>
+                <th className={clsx(styles.table_title, styles.indent)}>24h changes  %</th>
+                <th className={clsx(styles.table_title, styles.indent)}>Marcet Cap</th>
+                <th className={clsx(styles.table_title, styles.indent_last)}></th>
               </tr>
             </tbody>
             {items && items.slice(firstCoinsIndex, lastCoinsIndex).map((item) => {
               return (
                 <tbody>
                   <tr className={styles.table_row} key={item.id} onClick={() => handleOnClick(item.id)}>
-                    <td className={styles.table_items}>{item.name}</td>
-                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr))}>
+                    <td className={clsx(styles.table_items, styles.first_child)}>{item.name}</td>
+                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr), styles.table_items_indent)}>
                       {mathFloor(item.priceUsd)} $
                     </td>
-                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr))}>
+                    <td className={clsx(styles.table_items, textPercent(item.changePercent24Hr), styles.table_items_indent)}>
                       {mathFloor(item.changePercent24Hr)} %
                     </td>
-                    <td className={styles.table_items}>{Math.floor(item.marketCapUsd / 1000000) / 1000} B</td>
+                    <td className={clsx(styles.table_items, styles.table_items_indent)}>{mathFloorBillions(item.marketCapUsd)} B</td>
                     <td className={styles.table_items} onClick={(event) => event.stopPropagation()}>
                       <Tooltip content='Add in case'>
                         <div className={styles.table_add_coin} data-id={item.id} onClick={(event) => handleFormAdd(event)}>+</div>

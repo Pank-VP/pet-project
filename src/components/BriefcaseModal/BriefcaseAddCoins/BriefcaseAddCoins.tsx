@@ -5,8 +5,8 @@ import { round } from 'lodash';
 import BriefcaseModal from '../../BriefcaseModal/BriefcaseModal';
 import clsx from 'clsx';
 import { addCoinsLocalStorage, getCoinsFromLocalStorage } from '../../Utilits/GetCoinsToLocalStorage';
-import { signMath } from '../../Utilits/Math';
-import { textPercent } from '../../Utilits/textPercent';
+import { mathSign } from '../../Utilits/MathSign';
+import { textPercent } from '../../Utilits/TextPercent';
 
 interface IAddCoinProps {
   activeModal: boolean;
@@ -49,9 +49,9 @@ const AddCoin: FC<IAddCoinProps> = ({activeModal, setActiveModal, coins, coinId}
                 <p className={styles.case_items}>
                   {round(item.priceUsd, 3)}$
                   <span
-                    className={clsx(styles.case_items, textPercent(item.changePercent24Hr))}
+                    className={clsx(styles.case_items, textPercent(item.changePercent24Hr), styles.case_items_last)}
                   >
-                    ({signMath(item.changePercent24Hr)}
+                    ({mathSign(item.changePercent24Hr)}
                     {round(item.changePercent24Hr, 4)} %)
                   </span>
                 </p>

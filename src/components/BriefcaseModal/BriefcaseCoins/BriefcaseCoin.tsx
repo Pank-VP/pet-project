@@ -4,8 +4,8 @@ import BriefcaseModal from '../BriefcaseModal';
 import clsx from 'clsx';
 import { round } from 'lodash';
 import { ILocalStorageCoin, getCoinsFromLocalStorage } from '../../Utilits/GetCoinsToLocalStorage';
-import { signMath } from '../../Utilits/Math';
-import { textPercent } from '../../Utilits/textPercent';
+import { mathSign } from '../../Utilits/MathSign';
+import { textPercent } from '../../Utilits/TextPercent';
 
 interface ICaseCoinsProps {
   activeModalPage: boolean;
@@ -46,7 +46,7 @@ const BrifecaseCoins: FC<ICaseCoinsProps> = ({activeModalPage, setActiveModalPag
               <span
                 className={clsx(styles.case_items, textPercent(item.percent), styles.hidden)}
               >
-                {signMath(item.percent)}
+                {mathSign(item.percent)}
                 {round(item.percent, 4)}%
               </span>
               <span className={styles.case_items}>{item.amount}</span>

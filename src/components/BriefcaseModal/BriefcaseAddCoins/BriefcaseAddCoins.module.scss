@@ -1,146 +1,107 @@
-.case {
+.case_title {
+  text-align: center;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 50px;
 
-  &_title {
-    text-align: center;
-    padding-bottom: 20px;
-    color: white;
-    font-size: 50px;
-
-    @media (max-width: 700px) {
-      font-size: 36px;
-    }
-
-    @media (max-width: 450px) {
-      padding-bottom: 0;
-    }
-  }
-
-  &_card {
-    margin-top: 50px;
-    border-bottom: 3px solid white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-
-    @media (max-width: 450px) {
-      border-bottom: 1px solid white;
-      padding-bottom: 5px;
-    }
-  }
-
-  &_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-    height: 60px;
-    pointer-events: painted;
-    cursor: pointer;
-    border-radius: 15px;
-    font-weight: bold;
-    border: 1px solid #0d889c;
-    color: white;
-    font-size: 30px;
-
-    &:hover {
-      background-color: #0d889c;
-      color: black;
-    }
-
-    @media (max-width: 700px) {
-      width: 130px;
-      height: 42px;
-    }
-
-    @media (max-width: 550px) {
-      width: 80px;
-    }
-
-    @media (max-width: 450px) {
-      width: 60px;
-      font-size: 20px;
-    }
-  }
-
-  &_items {
-    color: white;
+  @media (max-width: 700px) {
     font-size: 36px;
-
-    &:last-child {
-      margin-left: 15px;
-    }
-
-    @media (max-width: 900px) {
-      font-size: 26px;
-    }
-
-    @media (max-width: 700px) {
-      font-size: 15px;
-    }
-
-    @media (max-width: 450px) {
-      font-size: 12px;
-    }
   }
 
-  &_input{
-    padding: 10px;
-    border-radius: 15px;
-    background-color: inherit;
-    color: white;
-    font-size: 30px;
-
-    @media (max-width: 1100px) {
-      width: 100px;
-    }
-
-    @media (max-width: 700px) {
-      font-size: 15px;
-    }
-
-    @media (max-width: 550px) {
-      width: 60px;
-    }
-    
-    @media (max-width: 450px) {
-      width: 50px;
-    }
+  @media (max-width: 450px) {
+    padding-bottom: 0;
   }
 }
 
-// .red {
-//   color: red;
-//   font-size: 36px;
-//   margin-left: 25px;
+.case_card {
+  margin-top: 50px;
+  border-bottom: 3px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 
-//   @media (max-width: 900px) {
-//     font-size: 26px;
-//   }
+  @media (max-width: 450px) {
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+  }
+}
 
-//   @media (max-width: 700px) {
-//     font-size: 15px;
-//   }
+.case_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 60px;
+  pointer-events: painted;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  border: 1px solid #0d889c;
+  color: white;
+  font-size: 30px;
 
-//   @media (max-width: 450px) {
-//     font-size: 12px;
-//   }
-// }
+  @media (max-width: 700px) {
+    width: 130px;
+    height: 42px;
+  }
 
-// .green {
-//   color: green;
-//   font-size: 36px;
-//   margin-left: 25px;
+  @media (max-width: 550px) {
+    width: 80px;
+  }
 
-//   @media (max-width: 900px) {
-//     font-size: 26px;
-//   }
+  @media (max-width: 450px) {
+    width: 60px;
+    font-size: 20px;
+  }
+}
 
-//   @media (max-width: 700px) {
-//     font-size: 15px;
-//   }
+.case_button:hover {
+  background-color: #0d889c;
+  color: black;
+}
 
-//   @media (max-width: 450px) {
-//     font-size: 12px;
-//   }
-// }
+.case_items {
+  color: white;
+  font-size: 36px;
+
+  @media (max-width: 900px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 12px;
+  }
+}
+
+.case_items_last {
+  margin-left: 15px;
+}
+
+.case_input{
+  padding: 10px;
+  border-radius: 15px;
+  background-color: inherit;
+  color: white;
+  font-size: 30px;
+
+  @media (max-width: 1100px) {
+    width: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 550px) {
+    width: 60px;
+  }
+  
+  @media (max-width: 450px) {
+    width: 50px;
+  }
+}

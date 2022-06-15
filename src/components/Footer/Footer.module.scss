@@ -6,21 +6,20 @@
   height: 100%;
   min-height: 10vh;
   background: linear-gradient(to right, #18162c, #16488b);
+}
 
+.wrapper {
+  margin: 0 auto;
+}
 
-  .wrapper {
-    margin: 0 auto;
-
-    .logo {
-      height: 80px;
-
-      @media (max-width: 650px) {
-        height: 50px;
-      }
-    }
+.logo {
+  height: 80px;
+  
+  @media (max-width: 650px) {
+    height: 50px;
   }
+}
 
-  .navigate {
-    margin: 0 auto;
-  }
+.navigate {
+  margin: 0 auto;
 }
